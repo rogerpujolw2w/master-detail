@@ -1,0 +1,15 @@
+<app-membermanager
+[errorDetected]="usuarioErroneo"
+[recordSaver]="usuarioCorrecto"
+(enviarUsuario)="recibir($enevt)"
+></app-membermanager>
+
+<div class="row" *ngIf="user != undefined" >
+
+  <ul>
+    <li><strong>Id: {{user.id}}</strong></li>
+    <li><strong>Nombre: {{user.nombre}}</strong></li>
+    <li><strong>DNI: {{user.dni}}</strong></li>
+  </ul>
+
+</div>
