@@ -8,32 +8,34 @@ import { User } from '../../shared/classes/user';
 })
 export class MyformComponent implements OnInit {
 
+  id: string;
   dni: string;
   nombre: string;
   user: User;
 
   @Input() errorDetected = false;
-  @Input() recodSaved = false;
+  @Input() recordSaved = false;
 
   @Output() enviarUsuario = new EventEmitter<User>();
 
   constructor() {
+      this.id = '';
       this.dni = '';
       this.nombre = '';
       this.errorDetected = false;
-      this.recodSaved = false;
+      this.recordSaved = false;
    }
 
    saveRecord() {
-     this.user = new User(this.dni,this.nombre);
+     this.user = new User(this.dni, this.nombre);
      this.enviarUsuario.emit(this.user);
      this.dni = '';
      this.nombre = '';
    }
 
-clearNotice() {
+   clearNotice() {
   this.errorDetected = false;
-  this.recodSaved = false;
+  this.recordSaved = false;
 }
 
   ngOnInit() {

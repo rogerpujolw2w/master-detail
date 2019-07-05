@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GlobalsModule } from './globals/globals.module';
 import { FormmemberModule } from './formmember/formmember.module';
 import { MemberModule } from './member/member.module';
+import { ServicioService } from './services/servicio.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MemberModule } from './member/member.module';
     MemberModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

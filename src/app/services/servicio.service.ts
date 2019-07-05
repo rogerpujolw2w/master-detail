@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from 'src/app/shared/classes/user';
 
-
-@Component({
-  selector: 'app-membermanager',
-  templateUrl: './membermanager.component.html',
-  styleUrls: ['./membermanager.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class MembermanagerComponent implements OnInit {
-
+export class ServicioService {
 
   user: User;
   storedUser: User;
@@ -18,9 +14,6 @@ export class MembermanagerComponent implements OnInit {
   usuarioErroneo = false;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   recibir(usuario: User) {
     this.usuarioCorrecto = false;
@@ -54,6 +47,4 @@ export class MembermanagerComponent implements OnInit {
     this.usersArray.splice(index, 1);
     this.registreredUsers = this.usersArray.length;
   }
-
-
 }

@@ -1,9 +1,6 @@
-<app-myform>
-[errorDetected]="usuarioErroneo"
-[recordSaved]="usuarioCorrecto"
-(enviarUsuario)="recibir($enevt)"
+<app-myform [errorDetected]="usuarioErroneo" [recordSaved]="usuarioCorrecto" (enviarUsuario)="recibir($event)">
 </app-myform>
-
+<!--
 <div class="row" *ngIf="user != undefined" >
 
   <ul>
@@ -13,3 +10,7 @@
   </ul>
 
 </div>
+-->
+
+<app-memberlist [usersArray] = "usersArray" [registerUsers]="registreredUsers" (eraseUser)="eraseUserXX($event)"
+></app-memberlist>
