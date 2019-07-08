@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/classes/user';
-
+import { ServicioService } from '../../services/servicio.service';
 
 @Component({
   selector: 'app-membermanager',
@@ -9,20 +9,24 @@ import { User } from 'src/app/shared/classes/user';
 })
 export class MembermanagerComponent implements OnInit {
 
+  usuarioCorrecto = false;
+  usuarioErroneo = false;
 
-  user: User;
+/*   user: User;
   storedUser: User;
   usersArray: Array<User> = [];
   registreredUsers = 0;
   usuarioCorrecto = false;
   usuarioErroneo = false;
+ */
+  constructor(private servicio: ServicioService) {
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
 
-  recibir(usuario: User) {
+/*   recibir(usuario: User) {
     this.usuarioCorrecto = false;
     this.usuarioErroneo = false;
 
@@ -54,6 +58,6 @@ export class MembermanagerComponent implements OnInit {
     this.usersArray.splice(index, 1);
     this.registreredUsers = this.usersArray.length;
   }
-
+ */
 
 }

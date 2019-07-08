@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { User } from '../../shared/classes/user';
+import { ServicioService } from '../../services/servicio.service';
 
 @Component({
   selector: 'app-myform',
@@ -13,30 +14,31 @@ export class MyformComponent implements OnInit {
   nombre: string;
   user: User;
 
-  @Input() errorDetected = false;
-  @Input() recordSaved = false;
+//  @Input() errorDetected = false;
+//  @Input() recordSaved = false;
 
-  @Output() enviarUsuario = new EventEmitter<User>();
+  //@Output() enviarUsuario = new EventEmitter<User>();
 
-  constructor() {
+  constructor(private servicio: ServicioService) {
       this.id = '';
       this.dni = '';
       this.nombre = '';
-      this.errorDetected = false;
+/*       this.errorDetected = false;
       this.recordSaved = false;
-   }
+ */   }
 
    saveRecord() {
      this.user = new User(this.dni, this.nombre);
-     this.enviarUsuario.emit(this.user);
+     this.servicio.recibir(this.user);
+     //this.enviarUsuario.emit(this.user);
      this.dni = '';
      this.nombre = '';
    }
 
    clearNotice() {
-  this.errorDetected = false;
+/*   this.errorDetected = false;
   this.recordSaved = false;
-}
+ */}
 
   ngOnInit() {
   }
